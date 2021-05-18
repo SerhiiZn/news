@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News aggregator</title>
+</head>
+<body>
+<h1>
+ {{ rss }}
+</h1>    
+<h1> 'technology'
+</h1>
+{% for table in tables1 %}
+            {{titles1[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<h1> 'science'
+</h1>
+{% for table in tables2 %}
+            {{titles2[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<h1> 'society'
+</h1>
+{% for table in tables3 %}
+            {{titles3[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<h1> 'not_news'
+</h1>
+{% for table in tables4 %}
+            {{titles4[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<h1> 'real_estate'
+</h1>
+{% for table in tables5 %}
+            {{titles5[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<div class="main-row">
+        <h1>Diagram</h1>
+        <div class="main_frame">
+            <iframe class="frame-border scroll-pane" src="main.html" frameborder="0" width="600" height="600"></iframe>
+        </div>
+    </div>
+    
+    <script src="static/js/jquery.nicescroll.min.js"></script> 
+    <script>
+      $(document).ready(function() {
+
+        var nice = $("html").niceScroll();  // The document page (body)
+
+        $("#div1").html($("#div1").html()+' '+nice.version);
+
+        $("#boxscroll").niceScroll(); // First scrollable DIV
+
+      });
+    </script>
+
+</body>
+</html>
